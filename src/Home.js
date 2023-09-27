@@ -15,21 +15,21 @@ function Home() {
   const [error, setError] = useState("");
   const handleClick = () => {
     if (name !== "") {
-      const apiUrl =
-        "https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=b615748981286154bf915a9bce82234b&units=metric";
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=b615748981286154bf915a9bce82234b&units=metric`;
+
       axios
         .get(apiUrl)
         .then((res) => {
           let imagePath = "";
-          if (res.data.weather[0].main == "Clouds") {
+          if (res.data.weather[0].main === "Clouds") {
             imagePath = "/Images/clouds.png";
-          } else if (res.data.weather[0].main == "Clear") {
+          } else if (res.data.weather[0].main === "Clear") {
             imagePath = "/Images/clear.png";
-          } else if (res.data.weather[0].main == "Rain") {
+          } else if (res.data.weather[0].main === "Rain") {
             imagePath = "/Images/rain.png";
-          } else if (res.data.weather[0].main == "Drizzle") {
+          } else if (res.data.weather[0].main === "Drizzle") {
             imagePath = "/Images/drizzle.png";
-          } else if (res.data.weather[0].main == "Mist") {
+          } else if (res.data.weather[0].main === "Mist") {
             imagePath = "/Images/mist.png";
           } else {
             imagePath = "/Images/clouds.png";
@@ -46,7 +46,7 @@ function Home() {
           setError("");
         })
         .catch((err) => {
-          if (err.response.status == 404) {
+          if (err.response.status === 404) {
             setError("Invalid City Name");
           } else {
             setError("");
