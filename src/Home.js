@@ -9,14 +9,13 @@ function Home() {
     name: "Harare",
     humidity: 15,
     speed: 5,
-    image: "../images./clouds.png",
+    image: "/images/clouds.png",
   });
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const handleClick = () => {
     if (name !== "") {
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=b615748981286154bf915a9bce82234b&units=metric`;
-
+        const apiUrl ='https://api.openweathermap.org/data/2.5/weather?q=Cape%20town&appid=b615748981286154bf915a9bce82234b&units=metric';
       axios
         .get(apiUrl)
         .then((res) => {
@@ -84,7 +83,7 @@ function Home() {
               </div>
             </div>
             <div className="col">
-              <img src="/Images/wind.png" alt="" />
+              <img src="images/windy.png" alt=""/>
               <div className="wind">
                 <p>{Math.round(data.speed)} km/h</p>
                 <p>Wind</p>
