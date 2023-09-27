@@ -6,10 +6,10 @@ import "./style.css";
 function Home() {
   const [data, setData] = useState({
     celcius: 10,
-    name: "London",
-    humidity: 10,
-    speed: 2,
-    image: "/Images/clouds.png",
+    name: "Harare",
+    humidity: 15,
+    speed: 5,
+    image: "../images./clouds.png",
   });
   const [name, setName] = useState("");
   const [error, setError] = useState("");
@@ -65,7 +65,7 @@ function Home() {
             onChange={(e) => setName(e.target.value)}
           />
           <button>
-            <img src="Images/search.png" onClick={handleClick} alt="" />
+            <img src="/images/search.png" onClick={handleClick} alt="" />
           </button>
         </div>
         <div className="error">
